@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login/Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="android-login-screen">
+
+      <h2 id="form-title">Login</h2>
+
+      <form id="login-form" action="login.php" method="POST">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+        <p id="ex31" onclick="showRegister()">Não tem conta? Cadastre-se</p>
+      </form>
+
+      <form id="register-form" action="cadastro.php" method="POST" style="display: none;">
+        <input type="text" name="name" placeholder="Nome completo" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <input type="password" name="confirm_password" placeholder="Confirmar senha" required>
+        <button type="submit">Cadastrar</button>
+        <p id="ex31" onclick="showLogin()">Já tem uma conta? Entrar</p>
+      </form>
+
+    </div>
+  </div>
+  <script>
+    function showRegister() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'flex';
+      document.getElementById('form-title').innerText = 'Cadastro';
+    }
+
+    function showLogin() {
+      document.getElementById('register-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'flex';
+      document.getElementById('form-title').innerText = 'Login';
+    }
+  </script>
+</body>
+</html>
